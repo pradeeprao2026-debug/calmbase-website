@@ -3,607 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Primary Meta Tags -->
-    <title>Calmbase - Where Chaos Stops</title>
-    <meta name="title" content="Calmbase - Where Chaos Stops">
+    
+    <!-- DO NOT MODIFY: These meta tags are approved -->
+    <title>Calmbase - Where chaos stops.</title>
     <meta name="description" content="Concierge workflow platform for high-trust services. Design freedom + operational power.">
-    <meta name="keywords" content="workflow platform, concierge services, high-trust services, operational efficiency, service management">
-    <meta name="author" content="Calmbase">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://getcalmbase.com/">
-    <meta property="og:title" content="Calmbase - Where Chaos Stops">
+    <meta property="og:title" content="Calmbase - Where chaos stops.">
     <meta property="og:description" content="Concierge workflow platform for high-trust services. Design freedom + operational power.">
-    <meta property="og:image" content="https://getcalmbase.com/og-image.png">
-    <meta property="og:site_name" content="Calmbase">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://getcalmbase.com/">
-    <meta property="twitter:title" content="Calmbase - Where Chaos Stops">
-    <meta property="twitter:description" content="Concierge workflow platform for high-trust services. Design freedom + operational power.">
-    <meta property="twitter:image" content="https://getcalmbase.com/og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://getcalmbase.com/">
-
-    <!-- Google Fonts - Instrument Sans -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getcalmbase.com">
+    
+    <!-- Font: Instrument Sans from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
+    
     <style>
-        /* Reset and Base */
-        *, *::before, *::after {
-            box-sizing: border-box;
+        /* CSS Variables */
+        :root {
+            --charcoal: #36454F;
+            --sage: #84B59F;
+            --slate: #50808E;
+            --eucalyptus: #69A297;
+            --cream: #F2F2F2;
+            --white: #FFFFFF;
+            --warning: #F59E0B;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+        }
+        
+        /* Reset */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-
-        :root {
-            --color-bg: #0a0a0a;
-            --color-surface: #141414;
-            --color-border: #262626;
-            --color-text: #fafafa;
-            --color-text-muted: #a3a3a3;
-            --color-accent: #d4d4d4;
-            --font-family: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        
+        /* Base Typography */
         body {
-            font-family: var(--font-family);
-            font-weight: 400;
+            font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             font-optical-sizing: auto;
             font-variation-settings: "wdth" 100;
-            background-color: var(--color-bg);
-            color: var(--color-text);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            color: var(--text-dark);
+            background: var(--white);
+            font-size: 18px;
+            font-weight: 400;
         }
-
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-family);
+        
+        h1, h2, h3, h4 {
             font-weight: 700;
-            font-optical-sizing: auto;
-            font-variation-settings: "wdth" 100;
             line-height: 1.2;
+            letter-spacing: -0.02em;
         }
-
-        /* Navigation */
-        nav {
+        
+        h1 { font-size: clamp(3rem, 8vw, 5.5rem); letter-spacing: -0.03em; }
+        h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+        
+        .section-label {
+            font-size: 0.875rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            padding: 8rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            section { padding: 4rem 0; }
+        }
+        
+        /* Header */
+        header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
-            background: rgba(10, 10, 10, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--color-border);
+            border-bottom: 1px solid rgba(54, 69, 79, 0.1);
         }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
+        
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1.5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-
+        
         .logo {
-            font-weight: 700;
             font-size: 1.5rem;
-            color: var(--color-text);
+            font-weight: 700;
+            color: var(--charcoal);
+            letter-spacing: 0.05em;
+        }
+        
+        .cta-button {
+            background: var(--charcoal);
+            color: white;
+            padding: 0.75rem 2rem;
             text-decoration: none;
-            letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
             font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--color-text-muted);
-            text-decoration: none;
-            transition: color 0.2s ease;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            border: 2px solid var(--charcoal);
         }
-
-        .nav-links a:hover {
-            color: var(--color-text);
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--charcoal);
         }
-
-        .nav-cta {
-            background: var(--color-text);
-            color: var(--color-bg);
-            padding: 0.6rem 1.25rem;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-        }
-
-        .nav-cta:hover {
-            opacity: 0.9;
-        }
-
-        /* Hero Section */
+        
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 8rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--slate) 100%);
+            color: white;
             position: relative;
             overflow: hidden;
+            padding-top: 80px;
         }
-
+        
         .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
-            pointer-events: none;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(132, 181, 159, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(80, 128, 142, 0.15) 0%, transparent 50%);
         }
-
+        
         .hero-content {
-            max-width: 900px;
             position: relative;
             z-index: 1;
         }
-
-        .hero-label {
-            display: inline-block;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--color-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 100px;
-            border: 1px solid var(--color-border);
-        }
-
+        
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
-            letter-spacing: -0.03em;
             margin-bottom: 1.5rem;
-            background: linear-gradient(180deg, #fff 0%, #a3a3a3 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            animation: fadeInUp 0.8s ease-out;
         }
-
+        
         .hero-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.35rem);
-            color: var(--color-text-muted);
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-            line-height: 1.7;
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+        
+        .hero-tagline {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--sage);
+            font-style: italic;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
-
+        
+        .hero-cta {
+            display: inline-flex;
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
         .btn-primary {
-            background: var(--color-text);
-            color: var(--color-bg);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
+            background: var(--sage);
+            color: var(--charcoal);
+            padding: 1rem 2.5rem;
             text-decoration: none;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--sage);
         }
-
+        
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
+            background: transparent;
+            color: var(--sage);
         }
-
+        
         .btn-secondary {
             background: transparent;
-            color: var(--color-text);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
+            color: white;
+            padding: 1rem 2.5rem;
             text-decoration: none;
-            border: 1px solid var(--color-border);
-            transition: all 0.2s ease;
-        }
-
-        .btn-secondary:hover {
-            background: var(--color-surface);
-            border-color: var(--color-text-muted);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 6rem 2rem;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-label {
             font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--color-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-        }
-
-        .section-subtitle {
             font-size: 1.1rem;
-            color: var(--color-text-muted);
-            max-width: 600px;
-            line-height: 1.7;
-        }
-
-        /* Features Section */
-        .features {
-            background: var(--color-bg);
-        }
-
-        .features-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .features-header .section-subtitle {
-            margin: 0 auto;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: var(--color-surface);
-            border: 1px solid var(--color-border);
-            border-radius: 16px;
-            padding: 2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
         }
-
-        .feature-card:hover {
-            border-color: var(--color-text-muted);
-            transform: translateY(-4px);
+        
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
         }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-card p {
-            color: var(--color-text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* How It Works */
-        .how-it-works {
-            background: var(--color-surface);
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .step {
-            text-align: center;
-        }
-
-        .step-number {
-            width: 56px;
-            height: 56px;
-            background: var(--color-bg);
-            border: 2px solid var(--color-border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin: 0 auto 1.5rem;
-            color: var(--color-text);
-        }
-
-        .step h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .step p {
-            color: var(--color-text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Use Cases */
-        .use-cases {
-            background: var(--color-bg);
-        }
-
-        .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 4rem;
-        }
-
-        .use-case {
-            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
-            border: 1px solid var(--color-border);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .use-case:hover {
-            border-color: var(--color-text-muted);
-        }
-
-        .use-case-label {
-            font-weight: 600;
-            font-size: 0.75rem;
-            color: var(--color-text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .use-case h3 {
-            font-size: 1.35rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .use-case p {
-            color: var(--color-text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* CTA Section */
-        .cta {
-            background: var(--color-surface);
-            text-align: center;
-        }
-
-        .cta-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            letter-spacing: -0.02em;
-            margin-bottom: 1rem;
-        }
-
-        .cta p {
-            font-size: 1.1rem;
-            color: var(--color-text-muted);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--color-bg);
-            border-top: 1px solid var(--color-border);
-            padding: 4rem 2rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .footer-brand {
-            max-width: 300px;
-        }
-
-        .footer-brand .logo {
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
-        .footer-brand p {
-            color: var(--color-text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .footer-column h4 {
-            font-weight: 600;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.25rem;
-            color: var(--color-text);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-column a {
-            color: var(--color-text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-        }
-
-        .footer-column a:hover {
-            color: var(--color-text);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 4rem auto 0;
-            padding-top: 2rem;
-            border-top: 1px solid var(--color-border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-bottom p {
-            color: var(--color-text-muted);
-            font-size: 0.85rem;
-        }
-
-        .footer-legal {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-legal a {
-            color: var(--color-text-muted);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s ease;
-        }
-
-        .footer-legal a:hover {
-            color: var(--color-text);
-        }
-
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--color-text);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-                gap: 3rem;
-            }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .nav-cta {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero {
-                padding: 7rem 1.5rem 3rem;
-            }
-
-            section {
-                padding: 4rem 1.5rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .footer-legal {
-                justify-content: center;
-            }
-        }
-
-        /* Animations */
+        
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -614,206 +225,305 @@
                 transform: translateY(0);
             }
         }
-
-        .hero-content {
-            animation: fadeInUp 0.8s ease-out;
+        
+        /* Problem Section */
+        .problem {
+            background: var(--cream);
         }
-
-        .feature-card, .step, .use-case {
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
-
-        .feature-card:nth-child(1), .step:nth-child(1), .use-case:nth-child(1) { animation-delay: 0.1s; }
-        .feature-card:nth-child(2), .step:nth-child(2), .use-case:nth-child(2) { animation-delay: 0.2s; }
-        .feature-card:nth-child(3), .step:nth-child(3), .use-case:nth-child(3) { animation-delay: 0.3s; }
-        .feature-card:nth-child(4), .use-case:nth-child(4) { animation-delay: 0.4s; }
+        
+        .problem-item {
+            background: white;
+            padding: 2rem;
+            border-left: 4px solid var(--warning);
+        }
+        
+        .problem-item h3 {
+            color: var(--warning);
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        
+        .callout-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 2px solid var(--warning);
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .callout-box p {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        
+        /* Philosophy */
+        .philosophy {
+            background: white;
+        }
+        
+        .philosophy-principles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .principle {
+            text-align: center;
+        }
+        
+        .principle-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .principle h3 {
+            margin-bottom: 1rem;
+            color: var(--charcoal);
+        }
+        
+        /* What It Is */
+        .what-it-is {
+            background: var(--charcoal);
+            color: white;
+        }
+        
+        .what-it-is h2 {
+            color: white;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-4px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature h3 {
+            color: var(--sage);
+            margin-bottom: 1rem;
+        }
+        
+        .feature p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: var(--sage);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                display: block;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <a href="/" class="logo">Calmbase</a>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#use-cases">Use Cases</a></li>
-            </ul>
-            <a href="#cta" class="nav-cta">Get Early Access</a>
-            <button class="mobile-menu-btn" aria-label="Menu">&#9776;</button>
-        </div>
-    </nav>
+    <!-- Header -->
+    <header>
+        <nav>
+            <!-- DO NOT MODIFY: Exact brand name from deck -->
+            <div class="logo">CALMBASE</div>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
+    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 1 -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="hero-label">Concierge Workflow Platform</span>
-            <h1>Where Chaos Stops</h1>
-            <p class="hero-subtitle">
-                Design freedom meets operational power. Build beautiful client experiences
-                with the workflow engine that keeps high-trust services running smoothly.
+        <div class="container">
+            <div class="hero-content">
+                <h1>Where Chaos Stops</h1>
+                <p class="hero-subtitle">A Concierge Workflow Platform for High-Trust Services</p>
+                <p class="hero-tagline">Calm systems for serious work.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn-primary">Book a Consultation</a>
+                    <a href="#what-it-is" class="btn-secondary">See How It Works</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 2 -->
+    <section class="problem">
+        <div class="container">
+            <span class="section-label">The Problem</span>
+            <h2>Modern Digital Stacks Are Loud</h2>
+            <div class="problem-grid">
+                <div class="problem-item">
+                    <h3>Too Many Tools</h3>
+                    <p>Dashboards everywhere. Integrations breaking. Staff overwhelmed by complexity.</p>
+                </div>
+                <div class="problem-item">
+                    <h3>Fake Intelligence</h3>
+                    <p>Automation pretending to understand. Chatbots that can't actually help.</p>
+                </div>
+                <div class="problem-item">
+                    <h3>Intake Chaos</h3>
+                    <p>Forms dumping into email. Manual triage. Missed follow-ups. No audit trail.</p>
+                </div>
+                <div class="problem-item">
+                    <h3>Compliance Anxiety</h3>
+                    <p>PHIPA, PIPEDA, HIPAA requirements duct-taped onto systems never built for it.</p>
+                </div>
+                <div class="problem-item">
+                    <h3>Burned-Out Staff</h3>
+                    <p>Context switching. System babysitting. Fighting tools instead of serving clients.</p>
+                </div>
+                <div class="problem-item">
+                    <h3>Clients Unheard</h3>
+                    <p>They submit a form and disappear into a black hole. Trust evaporates.</p>
+                </div>
+            </div>
+            <div class="callout-box">
+                <p>For high-trust services, this creates risk.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 3 -->
+    <section class="philosophy">
+        <div class="container">
+            <span class="section-label">The Insight</span>
+            <h2>The Best Systems Disappear</h2>
+            <p style="font-size: 1.25rem; max-width: 800px; margin: 2rem auto 0; text-align: center; color: var(--text-muted);">
+                The best systems don't demand attention. They collect what matters, route it correctly, and get out of the way.
             </p>
-            <div class="hero-buttons">
-                <a href="#cta" class="btn-primary">Request Early Access</a>
-                <a href="#features" class="btn-secondary">See How It Works</a>
+            <div class="philosophy-principles">
+                <div class="principle">
+                    <div class="principle-icon">✓</div>
+                    <h3>Clarity Beats Complexity</h3>
+                    <p>Simple flows that humans understand. No hidden logic. No surprises.</p>
+                </div>
+                <div class="principle">
+                    <div class="principle-icon">⚖</div>
+                    <h3>Judgment Beats Automation</h3>
+                    <p>AI assists. Humans decide. Accountability stays where it belongs.</p>
+                </div>
+                <div class="principle">
+                    <div class="principle-icon">◯</div>
+                    <h3>Calm Beats Scale Theater</h3>
+                    <p>Built for responsibility, not vanity metrics. Operations you can trust.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features" id="features">
+    <!-- What It Is Section -->
+    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 4 -->
+    <section class="what-it-is" id="what-it-is">
         <div class="container">
-            <div class="features-header">
-                <span class="section-label">Features</span>
-                <h2 class="section-title">Everything you need to deliver exceptional service</h2>
-                <p class="section-subtitle">
-                    Purpose-built for teams who refuse to compromise between beautiful design and powerful operations.
-                </p>
-            </div>
+            <span class="section-label" style="color: rgba(255,255,255,0.7);">The Solution</span>
+            <h2>What Is Calmbase?</h2>
+            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 900px;">
+                A concierge workflow platform that collects high-intent inquiries, structures them intelligently, routes them to the right human, and documents outcomes clearly.
+            </p>
+            
+            <!-- DO NOT MODIFY: These 4 features are from the deck. Do not add more. -->
             <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">&#9881;</div>
-                    <h3>Visual Workflow Builder</h3>
-                    <p>Design complex client journeys with our drag-and-drop interface. No code required, but infinitely extensible when you need it.</p>
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <h3>Collects High-Intent Inquiries</h3>
+                    <p>AI-powered intake that turns conversations into structured data. Not a chatbot—an intelligent assistant.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#128274;</div>
-                    <h3>White-Glove Client Portal</h3>
-                    <p>Give every client their own branded space. Secure document sharing, real-time status updates, and seamless communication.</p>
+                <div class="feature">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Structures Intelligently</h3>
+                    <p>Clean data from day one. Round-robin assignment. Smart routing by specialty or availability.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#128202;</div>
-                    <h3>Intelligent Automation</h3>
-                    <p>Automate the repetitive. Escalate the important. Our smart routing ensures nothing falls through the cracks.</p>
+                <div class="feature">
+                    <div class="feature-icon">👤</div>
+                    <h3>Routes to the Right Human</h3>
+                    <p>No black holes. Every inquiry reaches someone who can help. Accountability built-in.</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">&#127919;</div>
-                    <h3>Complete Visibility</h3>
-                    <p>Know exactly where every engagement stands. Real-time dashboards and alerts keep your team aligned and clients informed.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="how-it-works" id="how-it-works">
-        <div class="container">
-            <div class="features-header">
-                <span class="section-label">How It Works</span>
-                <h2 class="section-title">From chaos to calm in three steps</h2>
-                <p class="section-subtitle">
-                    Get up and running in days, not months. We'll help you every step of the way.
-                </p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Map Your Process</h3>
-                    <p>Import your existing workflows or build from our battle-tested templates designed for high-trust services.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Customize Everything</h3>
-                    <p>Match your brand perfectly. Configure automations, notifications, and client touchpoints exactly how you want them.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Launch & Scale</h3>
-                    <p>Go live with confidence. Our platform grows with you, handling more clients without adding complexity.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Use Cases -->
-    <section class="use-cases" id="use-cases">
-        <div class="container">
-            <div class="features-header">
-                <span class="section-label">Use Cases</span>
-                <h2 class="section-title">Built for high-trust services</h2>
-                <p class="section-subtitle">
-                    When your clients expect nothing less than exceptional, Calmbase delivers.
-                </p>
-            </div>
-            <div class="use-cases-grid">
-                <div class="use-case">
-                    <span class="use-case-label">Wealth Management</span>
-                    <h3>Family Offices & RIAs</h3>
-                    <p>Coordinate complex client relationships across multiple advisors, attorneys, and accountants with complete discretion.</p>
-                </div>
-                <div class="use-case">
-                    <span class="use-case-label">Professional Services</span>
-                    <h3>Law Firms & Consultancies</h3>
-                    <p>Manage matter lifecycles, client communications, and deliverables in one secure, organized platform.</p>
-                </div>
-                <div class="use-case">
-                    <span class="use-case-label">Concierge Services</span>
-                    <h3>Luxury & Lifestyle</h3>
-                    <p>Deliver bespoke experiences at scale. Track requests, coordinate vendors, and exceed expectations every time.</p>
-                </div>
-                <div class="use-case">
-                    <span class="use-case-label">Healthcare</span>
-                    <h3>Specialty Practices</h3>
-                    <p>Streamline patient journeys with HIPAA-compliant workflows that put care quality first.</p>
+                <div class="feature">
+                    <div class="feature-icon">📋</div>
+                    <h3>Documents Outcomes Clearly</h3>
+                    <p>Complete audit trail. Status tracking. Email notifications. Compliance by design.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta" id="cta">
+    <!-- DO NOT MODIFY: Simple contact section -->
+    <section id="contact" style="background: white; text-align: center;">
         <div class="container">
-            <div class="cta-content">
-                <span class="section-label">Get Started</span>
-                <h2>Ready to bring calm to your operations?</h2>
-                <p>Join the waitlist for early access. We're onboarding select teams who are ready to transform how they serve clients.</p>
-                <a href="mailto:hello@getcalmbase.com" class="btn-primary">Request Early Access</a>
-            </div>
+            <h2 style="margin-bottom: 1.5rem;">Ready for Calm Operations?</h2>
+            <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Let's talk about your workflow. Book a consultation to see if Calmbase is right for your practice.
+            </p>
+            <a href="mailto:hello@getcalmbase.com" class="cta-button" style="display: inline-block; padding: 1.25rem 3rem; font-size: 1.1rem;">hello@getcalmbase.com</a>
         </div>
     </section>
 
     <!-- Footer -->
+    <!-- DO NOT MODIFY: Exact tagline from deck -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="/" class="logo">Calmbase</a>
-                <p>The concierge workflow platform for teams who deliver exceptional, high-trust services.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Product</h4>
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#use-cases">Use Cases</a></li>
-                    <li><a href="#cta">Pricing</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
-                    <li><a href="mailto:hello@getcalmbase.com">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Documentation</a></li>
-                    <li><a href="#">API Reference</a></li>
-                    <li><a href="#">Security</a></li>
-                    <li><a href="#">Status</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Calmbase. All rights reserved.</p>
-            <div class="footer-legal">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
+        <div class="container">
+            <p><strong>CALMBASE</strong></p>
+            <p>Infrastructure for services where clarity matters more than clicks.</p>
+            <p style="margin-top: 2rem;"><a href="mailto:hello@getcalmbase.com">hello@getcalmbase.com</a></p>
+            <p style="margin-top: 1rem; font-size: 0.875rem;">© 2026 Calmbase. Built with the stack we recommend.</p>
         </div>
     </footer>
 </body>
