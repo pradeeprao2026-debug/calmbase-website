@@ -1,0 +1,81 @@
+# Netlify Configuration for Calmbase
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  publish = "."
+  command = "echo 'Static site - no build needed'"
+
+# Redirect www to non-www (primary domain)
+[[redirects]]
+  from = "https://www.getcalmbase.com/*"
+  to = "https://getcalmbase.com/:splat"
+  status = 301
+  force = true
+
+# Handle SPA-style routing (if needed in future)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Prevent clickjacking
+    X-Frame-Options = "DENY"
+
+    # Prevent MIME type sniffing
+    X-Content-Type-Options = "nosniff"
+
+    # Enable XSS protection
+    X-XSS-Protection = "1; mode=block"
+
+    # Referrer policy
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Permissions policy (formerly Feature-Policy)
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+    # Content Security Policy
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none';"
+
+    # Strict Transport Security (HSTS)
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+# Cache static assets
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.ico"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML should not be cached as aggressively
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
