@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- DO NOT MODIFY: These meta tags are approved -->
     <title>Calmbase - Where chaos stops.</title>
     <meta name="description" content="Concierge workflow platform for high-trust services. Design freedom + operational power.">
@@ -11,12 +11,12 @@
     <meta property="og:description" content="Concierge workflow platform for high-trust services. Design freedom + operational power.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://getcalmbase.com">
-    
+
     <!-- Font: Instrument Sans from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <style>
         /* CSS Variables */
         :root {
@@ -30,14 +30,14 @@
             --text-dark: #1E293B;
             --text-muted: #64748B;
         }
-        
+
         /* Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         /* Base Typography */
         body {
             font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -49,17 +49,17 @@
             font-size: 18px;
             font-weight: 400;
         }
-        
+
         h1, h2, h3, h4 {
             font-weight: 700;
             line-height: 1.2;
             letter-spacing: -0.02em;
         }
-        
+
         h1 { font-size: clamp(3rem, 8vw, 5.5rem); letter-spacing: -0.03em; }
         h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
         h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
-        
+
         .section-label {
             font-size: 0.875rem;
             letter-spacing: 0.15em;
@@ -67,22 +67,22 @@
             color: var(--text-muted);
             font-weight: 600;
         }
-        
+
         /* Layout */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-        
+
         section {
             padding: 8rem 0;
         }
-        
+
         @media (max-width: 768px) {
             section { padding: 4rem 0; }
         }
-        
+
         /* Header */
         header {
             position: fixed;
@@ -94,7 +94,7 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(54, 69, 79, 0.1);
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -103,14 +103,14 @@
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--charcoal);
             letter-spacing: 0.05em;
         }
-        
+
         .cta-button {
             background: var(--charcoal);
             color: white;
@@ -122,12 +122,12 @@
             transition: all 0.3s ease;
             border: 2px solid var(--charcoal);
         }
-        
+
         .cta-button:hover {
             background: transparent;
             color: var(--charcoal);
         }
-        
+
         /* Hero */
         .hero {
             min-height: 100vh;
@@ -139,7 +139,7 @@
             overflow: hidden;
             padding-top: 80px;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -147,28 +147,28 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 50%, rgba(132, 181, 159, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(80, 128, 142, 0.15) 0%, transparent 50%);
         }
-        
+
         .hero-content {
             position: relative;
             z-index: 1;
         }
-        
+
         .hero h1 {
             margin-bottom: 1.5rem;
             animation: fadeInUp 0.8s ease-out;
         }
-        
+
         .hero-subtitle {
             font-size: clamp(1.25rem, 3vw, 1.75rem);
             margin-bottom: 1rem;
             color: rgba(255, 255, 255, 0.9);
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
-        
+
         .hero-tagline {
             font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--sage);
@@ -176,13 +176,13 @@
             margin-bottom: 3rem;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
-        
+
         .hero-cta {
             display: inline-flex;
             gap: 1.5rem;
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
-        
+
         .btn-primary {
             background: var(--sage);
             color: var(--charcoal);
@@ -193,12 +193,12 @@
             transition: all 0.3s ease;
             border: 2px solid var(--sage);
         }
-        
+
         .btn-primary:hover {
             background: transparent;
             color: var(--sage);
         }
-        
+
         .btn-secondary {
             background: transparent;
             color: white;
@@ -209,12 +209,12 @@
             border: 2px solid rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
         }
-        
+
         .btn-secondary:hover {
             border-color: white;
             background: rgba(255, 255, 255, 0.1);
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -225,31 +225,31 @@
                 transform: translateY(0);
             }
         }
-        
+
         /* Problem Section */
         .problem {
             background: var(--cream);
         }
-        
+
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .problem-item {
             background: white;
             padding: 2rem;
             border-left: 4px solid var(--warning);
         }
-        
+
         .problem-item h3 {
             color: var(--warning);
             margin-bottom: 1rem;
             font-size: 1.25rem;
         }
-        
+
         .callout-box {
             background: rgba(245, 158, 11, 0.1);
             border: 2px solid var(--warning);
@@ -257,29 +257,29 @@
             margin-top: 3rem;
             text-align: center;
         }
-        
+
         .callout-box p {
             font-size: 1.5rem;
             font-weight: 600;
             color: var(--charcoal);
         }
-        
+
         /* Philosophy */
         .philosophy {
             background: white;
         }
-        
+
         .philosophy-principles {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
             margin-top: 4rem;
         }
-        
+
         .principle {
             text-align: center;
         }
-        
+
         .principle-icon {
             width: 80px;
             height: 80px;
@@ -291,54 +291,54 @@
             margin: 0 auto 1.5rem;
             font-size: 2rem;
         }
-        
+
         .principle h3 {
             margin-bottom: 1rem;
             color: var(--charcoal);
         }
-        
+
         /* What It Is */
         .what-it-is {
             background: var(--charcoal);
             color: white;
         }
-        
+
         .what-it-is h2 {
             color: white;
         }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2.5rem;
             margin-top: 4rem;
         }
-        
+
         .feature {
             background: rgba(255, 255, 255, 0.05);
             padding: 2.5rem;
             transition: all 0.3s ease;
         }
-        
+
         .feature:hover {
             background: rgba(255, 255, 255, 0.08);
             transform: translateY(-4px);
         }
-        
+
         .feature-icon {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
         }
-        
+
         .feature h3 {
             color: var(--sage);
             margin-bottom: 1rem;
         }
-        
+
         .feature p {
             color: rgba(255, 255, 255, 0.8);
         }
-        
+
         /* Footer */
         footer {
             background: var(--charcoal);
@@ -346,27 +346,27 @@
             padding: 3rem 0;
             text-align: center;
         }
-        
+
         footer p {
             margin-bottom: 0.5rem;
         }
-        
+
         footer a {
             color: var(--sage);
             text-decoration: none;
         }
-        
+
         footer a:hover {
             text-decoration: underline;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero-cta {
                 flex-direction: column;
                 width: 100%;
             }
-            
+
             .btn-primary,
             .btn-secondary {
                 display: block;
@@ -477,7 +477,7 @@
             <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 900px;">
                 A concierge workflow platform that collects high-intent inquiries, structures them intelligently, routes them to the right human, and documents outcomes clearly.
             </p>
-            
+
             <!-- DO NOT MODIFY: These 4 features are from the deck. Do not add more. -->
             <div class="features-grid">
                 <div class="feature">
@@ -501,6 +501,266 @@
                     <p>Complete audit trail. Status tracking. Email notifications. Compliance by design.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 9 -->
+    <section style="background: white; padding: 8rem 0;">
+        <div class="container">
+            <span class="section-label">The Choice</span>
+            <h2>Why Not Squarespace or Custom?</h2>
+            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 2rem auto 0; text-align: center;">
+                The real question: design freedom OR operational power?
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <!-- Website Builders Column -->
+                <div style="background: white; border: 2px solid var(--cream); overflow: hidden;">
+                    <div style="padding: 2rem; text-align: center; background: rgba(245, 158, 11, 0.1);">
+                        <h3>Website Builders</h3>
+                        <p style="font-size: 0.95rem; font-style: italic; color: var(--text-muted); margin-top: 0.5rem;">Squarespace, Wix, WordPress</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <ul style="list-style: none;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>Fast setup</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--text-muted); font-weight: bold;">✗</span>
+                                <span>Trapped in templates</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--text-muted); font-weight: bold;">✗</span>
+                                <span>No real workflow</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--text-muted); font-weight: bold;">✗</span>
+                                <span>Integration chaos</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--text-muted); font-weight: bold;">✗</span>
+                                <span>Not compliant</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Custom Build Column -->
+                <div style="background: white; border: 2px solid var(--cream); overflow: hidden;">
+                    <div style="padding: 2rem; text-align: center; background: rgba(245, 158, 11, 0.1);">
+                        <h3>Custom Build</h3>
+                        <p style="font-size: 0.95rem; font-style: italic; color: var(--text-muted); margin-top: 0.5rem;">From scratch</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <ul style="list-style: none;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>Complete freedom</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--text-muted); font-weight: bold;">✗</span>
+                                <span>$75k + 6 months</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--text-muted); font-weight: bold;">✗</span>
+                                <span>Build backend from scratch</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--text-muted); font-weight: bold;">✗</span>
+                                <span>Ongoing dev costs</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--text-muted); font-weight: bold;">✗</span>
+                                <span>Maintenance risk</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Calmbase Column -->
+                <div style="background: white; border: 2px solid var(--sage); overflow: hidden; box-shadow: 0 10px 40px rgba(132, 181, 159, 0.2);">
+                    <div style="padding: 2rem; text-align: center; background: var(--sage);">
+                        <h3 style="color: white;">Calmbase</h3>
+                        <p style="font-size: 0.95rem; font-style: italic; color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem;">Best of both worlds</p>
+                    </div>
+                    <div style="padding: 2rem;">
+                        <ul style="list-style: none;">
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>Clean canvas, any design</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>2-3 weeks</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>Proven backend</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--cream); display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>Fixed price $15k</span>
+                            </li>
+                            <li style="padding: 0.75rem 0; display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>Compliance built-in</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: var(--slate); color: white; padding: 2rem; text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.25rem; font-weight: 600;">Design freedom + operational power. Not design freedom OR operational power.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Economics Section -->
+    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 11 -->
+    <section style="background: var(--cream); padding: 8rem 0;">
+        <div class="container">
+            <span class="section-label">The Economics</span>
+            <h2>What It Actually Costs</h2>
+            <p style="font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin: 2rem auto 0; text-align: center;">
+                What it costs to build this from scratch vs. Calmbase
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem; margin-top: 4rem;">
+                <!-- Traditional Build -->
+                <div style="background: white; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+                    <div style="padding: 2rem; text-align: center; background: rgba(245, 158, 11, 0.15);">
+                        <h3>Traditional Build</h3>
+                    </div>
+                    <div style="padding: 2.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--cream);">
+                            <div>
+                                <h4 style="color: var(--charcoal); margin-bottom: 0.25rem; font-weight: 700;">Project Manager</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">120hrs @ $150/hr</p>
+                            </div>
+                            <div style="font-weight: 700; font-size: 1.25rem; color: var(--charcoal);">$18,000</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--cream);">
+                            <div>
+                                <h4 style="color: var(--charcoal); margin-bottom: 0.25rem; font-weight: 700;">Senior Developer</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">200hrs @ $175/hr</p>
+                            </div>
+                            <div style="font-weight: 700; font-size: 1.25rem; color: var(--charcoal);">$35,000</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--cream);">
+                            <div>
+                                <h4 style="color: var(--charcoal); margin-bottom: 0.25rem; font-weight: 700;">UI/UX Designer</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">80hrs @ $125/hr</p>
+                            </div>
+                            <div style="font-weight: 700; font-size: 1.25rem; color: var(--charcoal);">$10,000</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--cream);">
+                            <div>
+                                <h4 style="color: var(--charcoal); margin-bottom: 0.25rem; font-weight: 700;">DevOps Engineer</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">40hrs @ $150/hr</p>
+                            </div>
+                            <div style="font-weight: 700; font-size: 1.25rem; color: var(--charcoal);">$6,000</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 1rem 0;">
+                            <div>
+                                <h4 style="color: var(--charcoal); margin-bottom: 0.25rem; font-weight: 700;">QA/Testing</h4>
+                                <p style="font-size: 0.875rem; color: var(--text-muted);">60hrs @ $100/hr</p>
+                            </div>
+                            <div style="font-weight: 700; font-size: 1.25rem; color: var(--charcoal);">$6,000</div>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem 2rem; text-align: center; font-weight: 700; font-size: 1.25rem; color: white; background: var(--warning);">
+                        Total: $75,000 + 6-8 months
+                    </div>
+                </div>
+
+                <!-- Calmbase -->
+                <div style="background: white; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+                    <div style="padding: 2rem; text-align: center; background: rgba(132, 181, 159, 0.15);">
+                        <h3>Calmbase</h3>
+                    </div>
+                    <div style="padding: 2.5rem;">
+                        <p style="text-align: center; color: var(--text-muted); margin-bottom: 1rem;">Fixed-price implementation</p>
+                        <div style="font-size: 3.5rem; font-weight: 700; color: var(--sage); text-align: center; margin: 2rem 0;">$15,000</div>
+                        <ul style="list-style: none; margin-top: 2rem;">
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>2-3 week timeline</span>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>Proven architecture</span>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>12 months maintenance included</span>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>Compliance built-in</span>
+                            </li>
+                            <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                                <span style="color: var(--sage); font-weight: bold;">✓</span>
+                                <span>No ongoing dev costs</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="padding: 1.5rem 2rem; text-align: center; font-weight: 700; font-size: 1.25rem; color: white; background: var(--sage);">
+                        Save $60k + 5 months
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restraint Section -->
+    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 12 -->
+    <section style="background: var(--charcoal); color: white; padding: 8rem 0;">
+        <div class="container">
+            <span class="section-label" style="color: rgba(255,255,255,0.7);">Our Commitment</span>
+            <h2 style="color: white;">Calmbase Will Never:</h2>
+            <ul style="list-style: none; margin-top: 3rem; display: grid; gap: 1.5rem;">
+                <li style="display: flex; align-items: center; gap: 1.5rem; background: rgba(255, 255, 255, 0.05); padding: 1.5rem 2rem;">
+                    <div style="width: 48px; height: 48px; background: var(--slate); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.5rem;">🛡</div>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">Become a bloated CRM</p>
+                </li>
+                <li style="display: flex; align-items: center; gap: 1.5rem; background: rgba(255, 255, 255, 0.05); padding: 1.5rem 2rem;">
+                    <div style="width: 48px; height: 48px; background: var(--slate); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.5rem;">🛡</div>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">Automate human judgment away</p>
+                </li>
+                <li style="display: flex; align-items: center; gap: 1.5rem; background: rgba(255, 255, 255, 0.05); padding: 1.5rem 2rem;">
+                    <div style="width: 48px; height: 48px; background: var(--slate); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.5rem;">🛡</div>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">Store or spray sensitive data unnecessarily</p>
+                </li>
+                <li style="display: flex; align-items: center; gap: 1.5rem; background: rgba(255, 255, 255, 0.05); padding: 1.5rem 2rem;">
+                    <div style="width: 48px; height: 48px; background: var(--slate); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.5rem;">🛡</div>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">Add dashboards for vanity metrics</p>
+                </li>
+                <li style="display: flex; align-items: center; gap: 1.5rem; background: rgba(255, 255, 255, 0.05); padding: 1.5rem 2rem;">
+                    <div style="width: 48px; height: 48px; background: var(--slate); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.5rem;">🛡</div>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">Chase features to win demos</p>
+                </li>
+                <li style="display: flex; align-items: center; gap: 1.5rem; background: rgba(255, 255, 255, 0.05); padding: 1.5rem 2rem;">
+                    <div style="width: 48px; height: 48px; background: var(--slate); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.5rem;">🛡</div>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">Lock clients into proprietary complexity</p>
+                </li>
+                <li style="display: flex; align-items: center; gap: 1.5rem; background: rgba(255, 255, 255, 0.05); padding: 1.5rem 2rem;">
+                    <div style="width: 48px; height: 48px; background: var(--slate); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.5rem;">🛡</div>
+                    <p style="font-size: 1.1rem; color: rgba(255, 255, 255, 0.9);">Optimize scale at the expense of trust</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Manifesto Section -->
+    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 13 -->
+    <section style="background: var(--slate); color: white; text-align: center; padding: 10rem 0;">
+        <div class="container">
+            <p style="font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1.4; max-width: 900px; margin: 0 auto;">
+                If a feature makes the system <span style="color: var(--warning);">louder</span>, it doesn't belong in Calmbase.
+            </p>
         </div>
     </section>
 
