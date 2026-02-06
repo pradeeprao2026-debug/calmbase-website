@@ -373,9 +373,106 @@
                 text-align: center;
             }
         }
+        /* Password Protection */
+        .password-gate {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--slate) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .password-box {
+            background: white;
+            padding: 3rem;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .password-box h2 {
+            color: var(--charcoal);
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .password-box p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .password-box input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--cream);
+            font-family: inherit;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+
+        .password-box input:focus {
+            outline: none;
+            border-color: var(--sage);
+        }
+
+        .password-box button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--charcoal);
+            color: white;
+            border: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .password-box button:hover {
+            background: var(--slate);
+        }
+
+        .password-error {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .site-content {
+            display: none;
+        }
+
+        .site-content.unlocked {
+            display: block;
+        }
+
+        .password-gate.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <!-- Password Protection Gate -->
+    <div class="password-gate" id="passwordGate">
+        <div class="password-box">
+            <h2>CALMBASE</h2>
+            <p>This site is currently in preview mode.</p>
+            <input type="password" id="passwordInput" placeholder="Enter password" autofocus>
+            <button onclick="checkPassword()">Enter</button>
+            <p class="password-error" id="passwordError">Incorrect password</p>
+        </div>
+    </div>
+
+    <div class="site-content" id="siteContent">
     <!-- Header -->
     <header>
         <nav>
@@ -785,5 +882,36 @@
             <p style="margin-top: 1rem; font-size: 0.875rem;">© 2026 Calmbase. Built with the stack we recommend.</p>
         </div>
     </footer>
+    </div><!-- End site-content -->
+
+    <script>
+        // Password: calm2026
+        const correctHash = 'Y2FsbTIwMjY=';
+
+        function checkPassword() {
+            const input = document.getElementById('passwordInput').value;
+            const encoded = btoa(input);
+
+            if (encoded === correctHash) {
+                document.getElementById('passwordGate').classList.add('hidden');
+                document.getElementById('siteContent').classList.add('unlocked');
+                sessionStorage.setItem('calmbase_auth', 'true');
+            } else {
+                document.getElementById('passwordError').style.display = 'block';
+                document.getElementById('passwordInput').value = '';
+            }
+        }
+
+        // Check on Enter key
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') checkPassword();
+        });
+
+        // Check if already authenticated this session
+        if (sessionStorage.getItem('calmbase_auth') === 'true') {
+            document.getElementById('passwordGate').classList.add('hidden');
+            document.getElementById('siteContent').classList.add('unlocked');
+        }
+    </script>
 </body>
 </html>
