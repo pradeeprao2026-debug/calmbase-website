@@ -174,20 +174,101 @@
             overflow: hidden;
         }
 
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             text-align: center;
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-top: 50px;
         }
 
         .hero h1 {
             margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: clamp(4rem, 15vw, 12rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 0;
+            line-height: 0.9;
+            text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-tagline-main {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Manifesto Intro */
+        .manifesto-intro {
+            background: #000000;
+            color: white;
+            padding: 10rem 0;
+        }
+
+        .manifesto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .manifesto-left .manifesto-lead {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: white;
+        }
+
+        .brand-highlight {
+            color: #C45C4A;
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+        }
+
+        .manifesto-right p {
+            font-size: clamp(1rem, 2vw, 1.35rem);
+            font-weight: 400;
+            color: white;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .manifesto-right p:last-child {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .manifesto-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
         }
 
         /* Chaos to Calm text animation */
@@ -605,15 +686,30 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="hero-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="chaos-text" id="animatedHeadline" data-i18n="hero.headline"></h1>
-                <p class="hero-subtitle" data-i18n="hero.subtitle">A Concierge Workflow Platform for High-Trust Services</p>
-                <div class="hero-cta">
-                    <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Book a Consultation</a>
-                    <a href="#what-it-is" class="btn-secondary" data-i18n="hero.cta2">See How It Works</a>
+                <h1 class="hero-title">Calm base</h1>
+                <p class="hero-tagline-main">Nothing moves unless it has a reason.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manifesto Intro Section -->
+    <section class="manifesto-intro">
+        <div class="container">
+            <div class="manifesto-grid">
+                <div class="manifesto-left">
+                    <p class="manifesto-lead"><span class="brand-highlight">Calmbase</span> is designed for on-demand action.</p>
                 </div>
-                <p class="hero-tagline" data-i18n="hero.tagline">Calm systems for serious work.</p>
+                <div class="manifesto-right">
+                    <p>Nothing fires without intent.</p>
+                    <p>Nothing escalates without context.</p>
+                    <p>Nothing is automated beyond responsibility.</p>
+                </div>
             </div>
         </div>
     </section>
