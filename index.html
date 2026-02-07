@@ -462,35 +462,125 @@
 
         /* Philosophy */
         .philosophy {
-            background: white;
+            background: url('philosophy-bg.webp') center center / cover no-repeat;
+            position: relative;
+            color: white;
         }
 
-        .philosophy-principles {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+        .philosophy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
         }
 
-        .principle {
-            text-align: center;
+        .philosophy .container {
+            position: relative;
+            z-index: 1;
         }
 
-        .principle-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--sage);
-            border-radius: 50%;
+        .philosophy .section-label {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .philosophy h2 {
+            color: white;
+        }
+
+        .philosophy-content {
+            max-width: 100%;
+        }
+
+        .philosophy-header {
+            max-width: 600px;
+            margin-bottom: 3rem;
+        }
+
+        .philosophy-subtitle {
+            font-size: 1.25rem;
+            margin: 1.5rem 0 2.5rem 0;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .philosophy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .philosophy-list li {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            padding: 1.75rem;
+            position: relative;
+            background: rgba(132, 181, 159, 0.15);
+            border: 2px solid rgba(132, 181, 159, 0.5);
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeInCircle 0.8s ease-out forwards;
         }
 
-        .principle h3 {
-            margin-bottom: 1rem;
-            color: var(--charcoal);
+        .philosophy-list li:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .philosophy-list li:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .philosophy-list li:nth-child(3) {
+            animation-delay: 1.3s;
+        }
+
+        @keyframes fadeInCircle {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .philosophy-list li p {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.75);
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .philosophy-list li {
+                width: 180px;
+                height: 180px;
+                padding: 1.5rem;
+            }
+
+            .philosophy-list li span {
+                font-size: 1rem;
+            }
+
+            .philosophy-list li p {
+                font-size: 0.8rem;
+            }
         }
 
         /* What It Is */
@@ -754,27 +844,28 @@
     <!-- Philosophy Section -->
     <section class="philosophy">
         <div class="container">
-            <span class="section-label" data-i18n="philosophy.label">The Insight</span>
-            <h2 data-i18n="philosophy.title">The Best Systems Disappear</h2>
-            <p style="font-size: 1.25rem; max-width: 800px; margin: 2rem auto 0; text-align: center; color: var(--text-muted);" data-i18n="philosophy.subtitle">
-                The best systems don't demand attention. They collect what matters, route it correctly, and get out of the way.
-            </p>
-            <div class="philosophy-principles">
-                <div class="principle">
-                    <div class="principle-icon">✓</div>
-                    <h3 data-i18n="philosophy.1.title">Clarity Beats Complexity</h3>
-                    <p data-i18n="philosophy.1.text">Simple flows that humans understand. No hidden logic. No surprises.</p>
+            <div class="philosophy-content">
+                <div class="philosophy-header">
+                    <span class="section-label" data-i18n="philosophy.label">The Insight</span>
+                    <h2 data-i18n="philosophy.title">The Best Systems Disappear</h2>
+                    <p class="philosophy-subtitle" data-i18n="philosophy.subtitle">
+                        The best systems don't demand attention. They collect what matters, route it correctly, and get out of the way.
+                    </p>
                 </div>
-                <div class="principle">
-                    <div class="principle-icon">⚖</div>
-                    <h3 data-i18n="philosophy.2.title">Judgment Beats Automation</h3>
-                    <p data-i18n="philosophy.2.text">AI assists. Humans decide. Accountability stays where it belongs.</p>
-                </div>
-                <div class="principle">
-                    <div class="principle-icon">◯</div>
-                    <h3 data-i18n="philosophy.3.title">Calm Beats Scale Theater</h3>
-                    <p data-i18n="philosophy.3.text">Built for responsibility, not vanity metrics. Operations you can trust.</p>
-                </div>
+                <ul class="philosophy-list">
+                    <li>
+                        <span data-i18n="philosophy.1.title">Clarity Beats Complexity</span>
+                        <p data-i18n="philosophy.1.text">Simple flows that humans understand. No hidden logic. No surprises.</p>
+                    </li>
+                    <li>
+                        <span data-i18n="philosophy.2.title">Judgment Beats Automation</span>
+                        <p data-i18n="philosophy.2.text">AI assists. Humans decide. Accountability stays where it belongs.</p>
+                    </li>
+                    <li>
+                        <span data-i18n="philosophy.3.title">Calm Beats Scale Theater</span>
+                        <p data-i18n="philosophy.3.text">Built for responsibility, not vanity metrics. Operations you can trust.</p>
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
