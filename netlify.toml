@@ -5,10 +5,10 @@
   publish = "."
   command = "echo 'Static site - no build needed'"
 
-# Redirect www to non-www (primary domain)
+# Redirect non-www to www (primary domain)
 [[redirects]]
-  from = "https://www.getcalmbase.com/*"
-  to = "https://getcalmbase.com/:splat"
+  from = "https://getcalmbase.com/*"
+  to = "https://www.getcalmbase.com/:splat"
   status = 301
   force = true
 
