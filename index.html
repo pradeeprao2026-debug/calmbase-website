@@ -126,6 +126,42 @@
             color: var(--charcoal);
         }
 
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .lang-toggle button {
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .lang-toggle button:hover {
+            color: var(--charcoal);
+        }
+
+        .lang-toggle button.active {
+            color: var(--charcoal);
+            text-decoration: underline;
+        }
+
         /* Hero */
         .hero {
             min-height: 100vh;
@@ -555,9 +591,15 @@
     <!-- Header -->
     <header>
         <nav>
-            <!-- DO NOT MODIFY: Exact brand name from deck -->
             <div class="logo">CALMBASE</div>
-            <a href="#contact" class="cta-button">Get Started</a>
+            <div class="nav-right">
+                <div class="lang-toggle">
+                    <button id="langEN" class="active" onclick="setLanguage('en')">EN</button>
+                    <span>|</span>
+                    <button id="langFR" onclick="setLanguage('fr')">FR</button>
+                </div>
+                <a href="#contact" class="cta-button" data-i18n="nav.cta">Get Started</a>
+            </div>
         </nav>
     </header>
 
@@ -565,91 +607,88 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="chaos-text" id="animatedHeadline"></h1>
-                <p class="hero-subtitle">A Concierge Workflow Platform for High-Trust Services</p>
+                <h1 class="chaos-text" id="animatedHeadline" data-i18n="hero.headline"></h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">A Concierge Workflow Platform for High-Trust Services</p>
                 <div class="hero-cta">
-                    <a href="#contact" class="btn-primary">Book a Consultation</a>
-                    <a href="#what-it-is" class="btn-secondary">See How It Works</a>
+                    <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Book a Consultation</a>
+                    <a href="#what-it-is" class="btn-secondary" data-i18n="hero.cta2">See How It Works</a>
                 </div>
-                <p class="hero-tagline">Calm systems for serious work.</p>
+                <p class="hero-tagline" data-i18n="hero.tagline">Calm systems for serious work.</p>
             </div>
         </div>
     </section>
 
     <!-- Problem Section -->
-    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 2 -->
     <section class="problem">
         <div class="container">
-            <span class="section-label">The Problem</span>
-            <h2>Modern Digital Stacks Are Loud</h2>
+            <span class="section-label" data-i18n="problem.label">The Problem</span>
+            <h2 data-i18n="problem.title">Modern Digital Stacks Are Loud</h2>
             <div class="problem-grid">
                 <div class="problem-item">
-                    <h3>Too Many Tools</h3>
-                    <p>Dashboards everywhere. Integrations breaking. Staff overwhelmed by complexity.</p>
+                    <h3 data-i18n="problem.1.title">Too Many Tools</h3>
+                    <p data-i18n="problem.1.text">Dashboards everywhere. Integrations breaking. Staff overwhelmed by complexity.</p>
                 </div>
                 <div class="problem-item">
-                    <h3>Fake Intelligence</h3>
-                    <p>Automation pretending to understand. Chatbots that can't actually help.</p>
+                    <h3 data-i18n="problem.2.title">Fake Intelligence</h3>
+                    <p data-i18n="problem.2.text">Automation pretending to understand. Chatbots that can't actually help.</p>
                 </div>
                 <div class="problem-item">
-                    <h3>Intake Chaos</h3>
-                    <p>Forms dumping into email. Manual triage. Missed follow-ups. No audit trail.</p>
+                    <h3 data-i18n="problem.3.title">Intake Chaos</h3>
+                    <p data-i18n="problem.3.text">Forms dumping into email. Manual triage. Missed follow-ups. No audit trail.</p>
                 </div>
                 <div class="problem-item">
-                    <h3>Compliance Anxiety</h3>
-                    <p>PHIPA, PIPEDA, HIPAA requirements duct-taped onto systems never built for it.</p>
+                    <h3 data-i18n="problem.4.title">Compliance Anxiety</h3>
+                    <p data-i18n="problem.4.text">PHIPA, PIPEDA, HIPAA requirements duct-taped onto systems never built for it.</p>
                 </div>
                 <div class="problem-item">
-                    <h3>Burned-Out Staff</h3>
-                    <p>Context switching. System babysitting. Fighting tools instead of serving clients.</p>
+                    <h3 data-i18n="problem.5.title">Burned-Out Staff</h3>
+                    <p data-i18n="problem.5.text">Context switching. System babysitting. Fighting tools instead of serving clients.</p>
                 </div>
                 <div class="problem-item">
-                    <h3>Clients Unheard</h3>
-                    <p>They submit a form and disappear into a black hole. Trust evaporates.</p>
+                    <h3 data-i18n="problem.6.title">Clients Unheard</h3>
+                    <p data-i18n="problem.6.text">They submit a form and disappear into a black hole. Trust evaporates.</p>
                 </div>
             </div>
             <div class="callout-box">
-                <p>For high-trust services, this creates risk.</p>
+                <p data-i18n="problem.callout">For high-trust services, this creates risk.</p>
             </div>
         </div>
     </section>
 
     <!-- Philosophy Section -->
-    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 3 -->
     <section class="philosophy">
         <div class="container">
-            <span class="section-label">The Insight</span>
-            <h2>The Best Systems Disappear</h2>
-            <p style="font-size: 1.25rem; max-width: 800px; margin: 2rem auto 0; text-align: center; color: var(--text-muted);">
+            <span class="section-label" data-i18n="philosophy.label">The Insight</span>
+            <h2 data-i18n="philosophy.title">The Best Systems Disappear</h2>
+            <p style="font-size: 1.25rem; max-width: 800px; margin: 2rem auto 0; text-align: center; color: var(--text-muted);" data-i18n="philosophy.subtitle">
                 The best systems don't demand attention. They collect what matters, route it correctly, and get out of the way.
             </p>
             <div class="philosophy-principles">
                 <div class="principle">
                     <div class="principle-icon">✓</div>
-                    <h3>Clarity Beats Complexity</h3>
-                    <p>Simple flows that humans understand. No hidden logic. No surprises.</p>
+                    <h3 data-i18n="philosophy.1.title">Clarity Beats Complexity</h3>
+                    <p data-i18n="philosophy.1.text">Simple flows that humans understand. No hidden logic. No surprises.</p>
                 </div>
                 <div class="principle">
                     <div class="principle-icon">⚖</div>
-                    <h3>Judgment Beats Automation</h3>
-                    <p>AI assists. Humans decide. Accountability stays where it belongs.</p>
+                    <h3 data-i18n="philosophy.2.title">Judgment Beats Automation</h3>
+                    <p data-i18n="philosophy.2.text">AI assists. Humans decide. Accountability stays where it belongs.</p>
                 </div>
                 <div class="principle">
                     <div class="principle-icon">◯</div>
-                    <h3>Calm Beats Scale Theater</h3>
-                    <p>Built for responsibility, not vanity metrics. Operations you can trust.</p>
+                    <h3 data-i18n="philosophy.3.title">Calm Beats Scale Theater</h3>
+                    <p data-i18n="philosophy.3.text">Built for responsibility, not vanity metrics. Operations you can trust.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- What It Is Section -->
-    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 4 -->
     <section class="what-it-is" id="what-it-is">
         <div class="container">
-            <span class="section-label" style="color: rgba(255,255,255,0.7);">The Solution</span>
-            <h2>What Is Calmbase?</h2>
-            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 900px;">
+            <span class="section-label" style="color: rgba(255,255,255,0.7);" data-i18n="solution.label">The Solution</span>
+            <h2 data-i18n="solution.title">What Is Calmbase?</h2>
+            <p style="font-size: 1.25rem; color: rgba(255,255,255,0.8); margin-top: 1rem; max-width: 900px;" data-i18n="solution.subtitle">
                 A concierge workflow platform that collects high-intent inquiries, structures them intelligently, routes them to the right human, and documents outcomes clearly.
             </p>
 
@@ -939,11 +978,10 @@
     </section>
 
     <!-- CTA Section -->
-    <!-- DO NOT MODIFY: Simple contact section -->
     <section id="contact" style="background: white; text-align: center;">
         <div class="container">
-            <h2 style="margin-bottom: 1.5rem;">Ready for Calm Operations?</h2>
-            <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <h2 style="margin-bottom: 1.5rem;" data-i18n="cta.title">Ready for Calm Operations?</h2>
+            <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;" data-i18n="cta.subtitle">
                 Let's talk about your workflow. Book a consultation to see if Calmbase is right for your practice.
             </p>
             <a href="mailto:hello@getcalmbase.com" class="cta-button" style="display: inline-block; padding: 1.25rem 3rem; font-size: 1.1rem;">hello@getcalmbase.com</a>
@@ -951,24 +989,105 @@
     </section>
 
     <!-- Footer -->
-    <!-- DO NOT MODIFY: Exact tagline from deck -->
     <footer>
         <div class="container">
             <p><strong>CALMBASE</strong></p>
-            <p>Infrastructure for services where clarity matters more than clicks.</p>
+            <p data-i18n="footer.tagline">Infrastructure for services where clarity matters more than clicks.</p>
             <p style="margin-top: 2rem;"><a href="mailto:hello@getcalmbase.com">hello@getcalmbase.com</a></p>
-            <p style="margin-top: 1rem; font-size: 0.875rem;">© 2026 Calmbase. Built with the stack we recommend.</p>
+            <p style="margin-top: 1rem; font-size: 0.875rem;">© 2026 Calmbase.</p>
         </div>
     </footer>
     </div><!-- End site-content -->
 
     <script>
+        // Translations
+        const translations = {
+            en: {
+                headline: "Where Chaos Stops",
+                "nav.cta": "Get Started",
+                "hero.subtitle": "A Concierge Workflow Platform for High-Trust Services",
+                "hero.cta1": "Book a Consultation",
+                "hero.cta2": "See How It Works",
+                "hero.tagline": "Calm systems for serious work.",
+                "problem.label": "The Problem",
+                "problem.title": "Modern Digital Stacks Are Loud",
+                "problem.1.title": "Too Many Tools",
+                "problem.1.text": "Dashboards everywhere. Integrations breaking. Staff overwhelmed by complexity.",
+                "problem.2.title": "Fake Intelligence",
+                "problem.2.text": "Automation pretending to understand. Chatbots that can't actually help.",
+                "problem.3.title": "Intake Chaos",
+                "problem.3.text": "Forms dumping into email. Manual triage. Missed follow-ups. No audit trail.",
+                "problem.4.title": "Compliance Anxiety",
+                "problem.4.text": "PHIPA, PIPEDA, HIPAA requirements duct-taped onto systems never built for it.",
+                "problem.5.title": "Burned-Out Staff",
+                "problem.5.text": "Context switching. System babysitting. Fighting tools instead of serving clients.",
+                "problem.6.title": "Clients Unheard",
+                "problem.6.text": "They submit a form and disappear into a black hole. Trust evaporates.",
+                "problem.callout": "For high-trust services, this creates risk.",
+                "philosophy.label": "The Insight",
+                "philosophy.title": "The Best Systems Disappear",
+                "philosophy.subtitle": "The best systems don't demand attention. They collect what matters, route it correctly, and get out of the way.",
+                "philosophy.1.title": "Clarity Beats Complexity",
+                "philosophy.1.text": "Simple flows that humans understand. No hidden logic. No surprises.",
+                "philosophy.2.title": "Judgment Beats Automation",
+                "philosophy.2.text": "AI assists. Humans decide. Accountability stays where it belongs.",
+                "philosophy.3.title": "Calm Beats Scale Theater",
+                "philosophy.3.text": "Built for responsibility, not vanity metrics. Operations you can trust.",
+                "solution.label": "The Solution",
+                "solution.title": "What Is Calmbase?",
+                "solution.subtitle": "A concierge workflow platform that collects high-intent inquiries, structures them intelligently, routes them to the right human, and documents outcomes clearly.",
+                "cta.title": "Ready for Calm Operations?",
+                "cta.subtitle": "Let's talk about your workflow. Book a consultation to see if Calmbase is right for your practice.",
+                "footer.tagline": "Infrastructure for services where clarity matters more than clicks."
+            },
+            fr: {
+                headline: "Là où le chaos s'arrête",
+                "nav.cta": "Commencer",
+                "hero.subtitle": "Une plateforme de flux de travail concierge pour les services de haute confiance",
+                "hero.cta1": "Réserver une consultation",
+                "hero.cta2": "Voir comment ça marche",
+                "hero.tagline": "Des systèmes calmes pour un travail sérieux.",
+                "problem.label": "Le Problème",
+                "problem.title": "Les stacks numériques modernes sont bruyants",
+                "problem.1.title": "Trop d'outils",
+                "problem.1.text": "Des tableaux de bord partout. Des intégrations qui cassent. Du personnel submergé par la complexité.",
+                "problem.2.title": "Fausse Intelligence",
+                "problem.2.text": "L'automatisation qui prétend comprendre. Des chatbots qui ne peuvent pas vraiment aider.",
+                "problem.3.title": "Chaos d'admission",
+                "problem.3.text": "Des formulaires qui se déversent dans les emails. Triage manuel. Suivis manqués. Pas de piste d'audit.",
+                "problem.4.title": "Anxiété de conformité",
+                "problem.4.text": "Les exigences PHIPA, PIPEDA, HIPAA bricolées sur des systèmes jamais conçus pour ça.",
+                "problem.5.title": "Personnel épuisé",
+                "problem.5.text": "Changement de contexte constant. Surveillance des systèmes. Combattre les outils au lieu de servir les clients.",
+                "problem.6.title": "Clients non entendus",
+                "problem.6.text": "Ils soumettent un formulaire et disparaissent dans un trou noir. La confiance s'évapore.",
+                "problem.callout": "Pour les services de haute confiance, cela crée un risque.",
+                "philosophy.label": "La Perspicacité",
+                "philosophy.title": "Les meilleurs systèmes disparaissent",
+                "philosophy.subtitle": "Les meilleurs systèmes n'exigent pas d'attention. Ils collectent ce qui compte, l'acheminent correctement et s'effacent.",
+                "philosophy.1.title": "La clarté bat la complexité",
+                "philosophy.1.text": "Des flux simples que les humains comprennent. Pas de logique cachée. Pas de surprises.",
+                "philosophy.2.title": "Le jugement bat l'automatisation",
+                "philosophy.2.text": "L'IA assiste. Les humains décident. La responsabilité reste là où elle doit être.",
+                "philosophy.3.title": "Le calme bat le théâtre de l'échelle",
+                "philosophy.3.text": "Construit pour la responsabilité, pas pour les métriques de vanité. Des opérations en qui vous pouvez avoir confiance.",
+                "solution.label": "La Solution",
+                "solution.title": "Qu'est-ce que Calmbase?",
+                "solution.subtitle": "Une plateforme de flux de travail concierge qui collecte les demandes à haute intention, les structure intelligemment, les achemine vers le bon humain et documente clairement les résultats.",
+                "cta.title": "Prêt pour des opérations calmes?",
+                "cta.subtitle": "Parlons de votre flux de travail. Réservez une consultation pour voir si Calmbase convient à votre pratique.",
+                "footer.tagline": "Infrastructure pour les services où la clarté compte plus que les clics."
+            }
+        };
+
+        let currentLang = localStorage.getItem('calmbase_lang') || 'en';
+
         // Chaos to Calm text animation
         function initChaosText() {
             const headline = document.getElementById('animatedHeadline');
             if (!headline) return;
 
-            const text = "Where Chaos Stops";
+            const text = translations[currentLang].headline;
             headline.innerHTML = '';
 
             for (let i = 0; i < text.length; i++) {
@@ -980,7 +1099,6 @@
                     span.innerHTML = '&nbsp;';
                 } else {
                     span.textContent = char;
-                    // Slight delay variation for more organic chaos
                     span.style.animationDelay = (Math.random() * 0.3) + 's';
                 }
 
@@ -988,9 +1106,32 @@
             }
         }
 
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('calmbase_lang', lang);
+
+            // Update toggle buttons
+            document.getElementById('langEN').classList.toggle('active', lang === 'en');
+            document.getElementById('langFR').classList.toggle('active', lang === 'fr');
+
+            // Update all elements with data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (key === 'hero.headline') {
+                    initChaosText();
+                } else if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+        }
+
         // Run after page loads and auth check
         document.addEventListener('DOMContentLoaded', function() {
             if (sessionStorage.getItem('calmbase_auth') === 'true') {
+                setLanguage(currentLang);
                 setTimeout(initChaosText, 100);
             }
         });
@@ -1008,6 +1149,7 @@
                 document.getElementById('passwordGate').classList.add('hidden');
                 document.getElementById('siteContent').classList.add('unlocked');
                 sessionStorage.setItem('calmbase_auth', 'true');
+                setLanguage(currentLang);
                 setTimeout(initChaosText, 100);
             } else {
                 document.getElementById('passwordError').style.display = 'block';
