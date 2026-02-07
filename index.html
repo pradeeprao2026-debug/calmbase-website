@@ -18,17 +18,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* CSS Variables */
+        /* CSS Variables - Warm Minimal */
         :root {
-            --charcoal: #36454F;
-            --sage: #84B59F;
-            --slate: #50808E;
-            --eucalyptus: #69A297;
-            --cream: #F2F2F2;
-            --white: #FFFFFF;
-            --warning: #F59E0B;
-            --text-dark: #1E293B;
-            --text-muted: #64748B;
+            --charcoal: #41403E;
+            --sage: #E8A87C;
+            --slate: #41403E;
+            --eucalyptus: #D4956A;
+            --cream: #F5F5F5;
+            --white: #F5F5F5;
+            --warning: #E8A87C;
+            --text-dark: #1A1A1A;
+            --text-muted: #6B6B6B;
         }
 
         /* Reset */
@@ -89,10 +89,8 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: var(--cream);
             z-index: 1000;
-            border-bottom: 1px solid rgba(54, 69, 79, 0.1);
         }
 
         nav {
@@ -133,39 +131,120 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--charcoal) 0%, var(--slate) 100%);
+            justify-content: center;
+            background: #0D0D0D;
             color: white;
             position: relative;
             overflow: hidden;
-            padding-top: 80px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                radial-gradient(circle at 20% 50%, rgba(132, 181, 159, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(80, 128, 142, 0.15) 0%, transparent 50%);
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
         }
 
         .hero h1 {
             margin-bottom: 1.5rem;
-            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Chaos to Calm text animation */
+        .chaos-text {
+            font-size: clamp(2rem, 8vw, 6rem);
+            text-transform: uppercase;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+        }
+
+        .chaos-text span {
+            display: inline-block;
+            color: #F5F5F5;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+
+        .chaos-text .space {
+            width: 0.3em;
+        }
+
+        /* Each letter gets slightly different chaos pattern */
+        .chaos-text span:nth-child(odd) {
+            animation-name: chaosToCalm1;
+        }
+
+        .chaos-text span:nth-child(even) {
+            animation-name: chaosToCalm2;
+        }
+
+        @keyframes chaosToCalm1 {
+            0%, 5% {
+                transform: translate(0, 0) rotate(0deg) skew(0deg);
+            }
+            10% {
+                transform: translate(-8px, 12px) rotate(-15deg) skew(5deg);
+            }
+            15% {
+                transform: translate(10px, -8px) rotate(12deg) skew(-8deg);
+            }
+            20% {
+                transform: translate(-12px, -15px) rotate(-20deg) skew(10deg);
+            }
+            25% {
+                transform: translate(15px, 10px) rotate(18deg) skew(-5deg);
+            }
+            30% {
+                transform: translate(-5px, 8px) rotate(-8deg) skew(3deg);
+            }
+            35% {
+                transform: translate(8px, -5px) rotate(5deg) skew(-2deg);
+            }
+            /* Settle into calm */
+            45%, 100% {
+                transform: translate(0, 0) rotate(0deg) skew(0deg);
+            }
+        }
+
+        @keyframes chaosToCalm2 {
+            0%, 5% {
+                transform: translate(0, 0) rotate(0deg) skew(0deg);
+            }
+            10% {
+                transform: translate(10px, -10px) rotate(18deg) skew(-6deg);
+            }
+            15% {
+                transform: translate(-15px, 8px) rotate(-14deg) skew(8deg);
+            }
+            20% {
+                transform: translate(8px, 15px) rotate(22deg) skew(-10deg);
+            }
+            25% {
+                transform: translate(-10px, -12px) rotate(-16deg) skew(6deg);
+            }
+            30% {
+                transform: translate(6px, -6px) rotate(10deg) skew(-4deg);
+            }
+            35% {
+                transform: translate(-4px, 4px) rotate(-5deg) skew(2deg);
+            }
+            /* Settle into calm */
+            45%, 100% {
+                transform: translate(0, 0) rotate(0deg) skew(0deg);
+            }
         }
 
         .hero-subtitle {
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
-            margin-bottom: 1rem;
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            margin-bottom: 6rem;
             color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
@@ -173,12 +252,14 @@
             font-size: clamp(1rem, 2vw, 1.25rem);
             color: var(--sage);
             font-style: italic;
-            margin-bottom: 3rem;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
+            margin-top: 1.5rem;
+            margin-bottom: 0;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
         .hero-cta {
             display: inline-flex;
+            justify-content: center;
             gap: 1.5rem;
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
@@ -186,32 +267,30 @@
         .btn-primary {
             background: var(--sage);
             color: var(--charcoal);
-            padding: 1rem 2.5rem;
+            padding: 1.25rem 3rem;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: all 0.3s ease;
-            border: 2px solid var(--sage);
+            border: none;
         }
 
         .btn-primary:hover {
-            background: transparent;
-            color: var(--sage);
+            background: #9ac4ad;
         }
 
         .btn-secondary {
             background: transparent;
             color: white;
-            padding: 1rem 2.5rem;
+            padding: 1.25rem 3rem;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 1rem;
+            border: 2px solid white;
             transition: all 0.3s ease;
         }
 
         .btn-secondary:hover {
-            border-color: white;
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -483,17 +562,16 @@
     </header>
 
     <!-- Hero Section -->
-    <!-- DO NOT MODIFY: Exact copy from pitch deck Slide 1 -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Where Chaos Stops</h1>
+                <h1 class="chaos-text" id="animatedHeadline"></h1>
                 <p class="hero-subtitle">A Concierge Workflow Platform for High-Trust Services</p>
-                <p class="hero-tagline">Calm systems for serious work.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn-primary">Book a Consultation</a>
                     <a href="#what-it-is" class="btn-secondary">See How It Works</a>
                 </div>
+                <p class="hero-tagline">Calm systems for serious work.</p>
             </div>
         </div>
     </section>
@@ -885,6 +963,40 @@
     </div><!-- End site-content -->
 
     <script>
+        // Chaos to Calm text animation
+        function initChaosText() {
+            const headline = document.getElementById('animatedHeadline');
+            if (!headline) return;
+
+            const text = "Where Chaos Stops";
+            headline.innerHTML = '';
+
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const span = document.createElement('span');
+
+                if (char === ' ') {
+                    span.className = 'space';
+                    span.innerHTML = '&nbsp;';
+                } else {
+                    span.textContent = char;
+                    // Slight delay variation for more organic chaos
+                    span.style.animationDelay = (Math.random() * 0.3) + 's';
+                }
+
+                headline.appendChild(span);
+            }
+        }
+
+        // Run after page loads and auth check
+        document.addEventListener('DOMContentLoaded', function() {
+            if (sessionStorage.getItem('calmbase_auth') === 'true') {
+                setTimeout(initChaosText, 100);
+            }
+        });
+    </script>
+
+    <script>
         // Password: calm2026
         const correctHash = 'Y2FsbTIwMjY=';
 
@@ -896,6 +1008,7 @@
                 document.getElementById('passwordGate').classList.add('hidden');
                 document.getElementById('siteContent').classList.add('unlocked');
                 sessionStorage.setItem('calmbase_auth', 'true');
+                setTimeout(initChaosText, 100);
             } else {
                 document.getElementById('passwordError').style.display = 'block';
                 document.getElementById('passwordInput').value = '';
